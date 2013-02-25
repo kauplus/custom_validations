@@ -1,0 +1,11 @@
+"pt-BR":
+  errors:
+    # Os valores :model, :attribute e :value estão disponíveis para interpolação
+    # O valor :count está disponível quando aplicável. Pode ser usado para pluralização.
+    messages:
+      br_cpf: "não é um CPF válido"
+      br_cnpj: "não é um CNPJ válido"
+      br_postal_code: "não é um CEP válido"
+      email: "não é um endereço de email"
+      url: "é uma url inválida"
+      url_as_host: "é uma url inválida (informe apenas o domínio, sem http e /)"

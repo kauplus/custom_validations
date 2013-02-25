@@ -19,4 +19,4 @@ end
 
 # Load translations
 require 'active_support/i18n'
-I18n.load_path << File.dirname(__FILE__) + '/custom_validations/locale/en.yml'
+I18n.load_path += Dir[File.dirname(__FILE__) + '/custom_validations/locales/*.{rb,yml}']
