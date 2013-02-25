@@ -3,4 +3,9 @@ en:
     # The values :model, :attribute and :value are always available for interpolation
     # The value :count is available when applicable. Can be used for pluralization.
     messages:
-      email: "not an email address"
+      br_cpf: "is not a valid brazilian CPF"
+      br_cnpj: "is not a valid brazilian CNPJ"
+      br_postal_code: "is not a valid brazilian postal code"
+      email: "is not an email address"
+      url: "is an invalid url"
+      url_as_host: "is an invalid url (specify only the domain, without http and /)"

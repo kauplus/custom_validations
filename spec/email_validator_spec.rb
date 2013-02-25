@@ -11,18 +11,19 @@ def email_valid?(email)
 end
 
 
-describe ActiveModel::Validations::EmailValidator do
+describe ActiveModel::Validations::EmailValidator, 'validates with' do
 
 
-  it "validates models with valid emails" do
+  it "valid emails" do
     email_valid?(nil).should be_true
     email_valid?('').should be_true
+    email_valid?(' ').should be_true
     email_valid?('example@kauplus.com.br').should be_true
     email_valid?('example@123.com').should be_true
   end
 
 
-  it "validates models with invalid emails" do
+  it "invalid emails" do
     email_valid?('example').should be_false
     email_valid?('example@kauplus.com.').should be_false
     email_valid?('example@kauplus@kauplus.com.br').should be_false

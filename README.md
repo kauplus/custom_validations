@@ -3,7 +3,10 @@
 CustomValidatons is a Rails 3 gem that provides a series of custom validations. The following validations are available:
 
 * validates_email_of
-
+* validates_url_of
+* validates_br_cnpj_of
+* validates_br_cpf_of
+* validates_br_postal_code_of
 
 ## Installation
 
@@ -26,8 +29,14 @@ You can use CustomValidations in any class that includes ActiveModel::Validation
 
     class DummyClass < ActiveRecord::Base
 
-      validates_email_of :contact_email
-      #validates :contact_email, email: true # use it the way you want
+      validates :contact_email, email: true
+      #validates_email_of :contact_email # use it the way you want
+
+      validates :cpf,       br_cpf: true
+      validates :cnpj,      br_cnpj: true
+      validates :cep,       br_postal_code: true
+      validates :url,       url: true
+      validates :hostname,  url: { as_host: true }
 
     end
 
@@ -41,7 +50,12 @@ Example:
     "pt-BR":
       errors:
         messages:
+          br_cpf: "não é um CPF válido"
+          br_cnpj: "não é um CNPJ válido"
+          br_postal_code: "não é um CEP válido"
           email: "não é um endereço de email"
+          url: "é uma url inválida"
+          url_as_host: "é uma url inválida (informe apenas o domínio, sem http e /)"
 
 
 ## Use along with ClientSideValidations
