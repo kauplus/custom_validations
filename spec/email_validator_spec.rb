@@ -27,7 +27,10 @@ describe ActiveModel::Validations::EmailValidator, 'validates with' do
     email_valid?('example').should be_false
     email_valid?('example@kauplus.com.').should be_false
     email_valid?('example@kauplus@kauplus.com.br').should be_false
+    email_valid?('example@kauplus,com.br').should be_false
     email_valid?('example@kauplus').should be_false
+    email_valid?('sdmgf sd@jds f').should be_false
+    email_valid?("invalid email\nasdasd@example.com").should be_false
     email_valid?('@').should be_false
     email_valid?('kauplus.com').should be_false
     email_valid?('example@kauplus .com.br').should be_false

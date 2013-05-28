@@ -4,7 +4,7 @@ module ActiveModel
 
     class EmailValidator < ActiveModel::EachValidator
 
-      REGEX = /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i
+      REGEX = /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i
 
       def validate_each(record, attribute, value)
         return if value.to_s.blank? # it doesn't validate presence

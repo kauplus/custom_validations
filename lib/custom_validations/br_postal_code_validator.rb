@@ -4,7 +4,7 @@ module ActiveModel
 
     class BrPostalCodeValidator < ActiveModel::EachValidator
 
-      REGEX = /^\d{5}\-?\d{3}$/
+      REGEX = /\A\d{5}\-?\d{3}\z/
 
       def validate_each(record, attribute, value)
         return if value.to_s.blank? # it doesn't validate presence
